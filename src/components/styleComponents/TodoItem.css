@@ -1,0 +1,28 @@
+.TodoItem-container {
+  display: flex;
+  justify-content: center;
+}
+
+.check {
+  margin: 0 10px;
+  border-radius: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.37);
+  width: 18px;
+  height: 18px;
+}
+
+.TodoItem-task {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  min-width: 200px;
+  max-width: 500px;
+  background-color: rgba(305, 255, 255, 0.1);
+  border-radius: 7px;
+  padding: 10px;
+  margin: 10px;
+  list-style-type: none;
+  box-shadow: rgba(87, 87, 87, 0.1) 0px 4px 12px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}

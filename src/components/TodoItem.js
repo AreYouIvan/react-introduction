@@ -1,12 +1,14 @@
 import React from "react";
+import "./styleComponents/TodoItem.css";
 
 function TodoItem(props) {
   return (
-    <li>
-      <span>C</span>
-      <p>{props.text}</p>
-      <span>X</span>
-    </li>
+    <div className="TodoItem-container">
+      <li className="TodoItem-task">
+        <span className="check"></span>
+        <p>{props.text}</p>
+      </li>
+    </div>
   );
 }
 

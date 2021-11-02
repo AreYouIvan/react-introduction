@@ -1,14 +1,12 @@
 import React from "react";
 import "./App.css";
 
-
 // Components
-import {TodoCounter} from './components/TodoCounter'
+import { TodoCounter } from "./components/TodoCounter";
 import { CreateTodoButton } from "./components/CreateTodoButton";
 import { TodoItem } from "./components/TodoItem";
 import { TodoList } from "./components/TodoList";
 import { TodoSearch } from "./components/TodoSearch";
-
 
 const todos = [
   { text: "Ir al super", completed: false },
@@ -20,14 +18,17 @@ const todos = [
 function App() {
   return (
     <>
-      <TodoCounter />
-      <TodoSearch />
-      <TodoList>
-        {todos.map((e) => (
-          <TodoItem text={e.text}/>
-        ))}
-      </TodoList>
-      {<CreateTodoButton />}
+      <section className="App-body">
+        <h2 className="App-title">Your tasks</h2>
+        <TodoCounter />
+        <TodoSearch />
+        <TodoList>
+          {todos.map((e) => (
+            <TodoItem text={e.text} />
+          ))}
+        </TodoList>
+        {<CreateTodoButton />}
+      </section>
     </>
   );
 }
