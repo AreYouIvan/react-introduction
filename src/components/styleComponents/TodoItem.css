@@ -3,12 +3,20 @@
   justify-content: center;
 }
 
-.check {
+.icon-check {
   margin: 0 10px;
   border-radius: 30px;
   border: 2px solid rgba(0, 0, 0, 0.37);
   width: 18px;
   height: 18px;
+}
+
+.icon-check--active {
+  background-color: #31d8e4;
+}
+
+.TodoItem-completed {
+  text-decoration: line-through;
 }
 
 .TodoItem-task {
