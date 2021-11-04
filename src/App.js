@@ -33,6 +33,29 @@ function App() {
       return todoText.includes(searchText);
     });
   }
+
+  // Completing and deleting TODOs
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex((e) => e.text === text);
+
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex((e) => e.text === text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex , 1);
+    setTodos(newTodos);
+  };
+
+  // This is another way to looking for the index of the todos array.
+  // todos[todoIndex] = {
+  //   text: todos[todoIndex].text,
+  //   completed: true,
+  // };
+
   return (
     <>
       <section className="App-body">
@@ -41,7 +64,17 @@ function App() {
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
         <TodoList>
           {searchedTodos.map((e) => (
-            <TodoItem text={e.text} key={e.text} completed={e.completed} />
+            <TodoItem
+              text={e.text}
+              key={e.text}
+              completed={e.completed}
+              onComplete={() => {
+                completeTodo(e.text);
+              }}
+              onDelete={() => {
+                deleteTodo(e.text);
+              }}
+            />
           ))}
         </TodoList>
         {<CreateTodoButton />}
