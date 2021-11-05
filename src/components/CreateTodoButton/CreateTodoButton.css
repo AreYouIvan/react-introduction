@@ -1,0 +1,21 @@
+.CreateTodoButton-button {
+  position: fixed;
+  /* background-color: transparent;
+  border: 1px solid ; */
+  border-radius: 35px;
+  width: 60px;
+  height: 40px;
+
+  box-shadow: rgba(11, 223, 159, 0.1) 0px 4px 12px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(2, 238, 255, 0.424);
+  border: none;
+  font-size: 35px;
+  color: rgba(0, 0, 0, 0.514);
+}
+
+.butCreateTodoButton-container {
+  display: flex;
+  justify-content: center;
+}
