@@ -6,43 +6,41 @@ import { CreateTodoButton } from "../components/CreateTodoButton";
 import { TodoItem } from "../components/TodoItem";
 import { TodoList } from "../components/TodoList";
 import { TodoSearch } from "../components/TodoSearch";
+import { TodoContext } from "../components/TodoContext";
 
-function AppUI({
-  loading,
-  error,
-  totalTodos,
-  completedTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  completeTodo,
-  deleteTodo,
-}) {
+function AppUI() {
   return (
     <>
       <section className="App-body">
         <h2 className="App-title">Your tasks</h2>
-        <TodoCounter total={totalTodos} completed={completedTodos} />
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-        <TodoList>
-        {error && <p>Sorry, there's an error</p>}
-        {loading && <p>We're loading, thanks for waiting</p>}
-        {(!loading && !searchedTodos.length) && <p>Let's create your first todo</p>}
+        <TodoCounter />
+        <TodoSearch />
+        <TodoContext.Consumer>
+          {({error, 
+          loading, 
+          searchedTodos, 
+          completeTodo, 
+          deleteTodo
+          }) => (
+            <TodoList>
+          {error && <p>Sorry, there's an error</p>}
+          {loading && <p>We're loading, thanks for waiting</p>}
+          {!loading && !searchedTodos.length && (<p>Let's create your first todo</p>)}
           {searchedTodos.map((e) => (
             <TodoItem
               text={e.text}
               key={e.text}
               completed={e.completed}
               onComplete={() => {
-                completeTodo(e.text);
-              }}
+                completeTodo(e.text)}}
               onDelete={() => {
-                deleteTodo(e.text);
-              }}
+                deleteTodo(e.text)}}
             />
           ))}
         </TodoList>
-        {<CreateTodoButton />}
+          )}
+        </TodoContext.Consumer>
+        <CreateTodoButton />
       </section>
     </>
   );
