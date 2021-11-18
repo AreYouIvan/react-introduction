@@ -7,15 +7,10 @@ import { TodoItem } from "../components/TodoItem";
 import { TodoList } from "../components/TodoList";
 import { TodoSearch } from "../components/TodoSearch";
 import { TodoContext } from "../components/TodoContext";
+import { Modal } from "../Modal";
 
 function AppUI() {
-  const { 
-    error, 
-    loading, 
-    searchedTodos, 
-    completeTodo, 
-    deleteTodo 
-  } =
+  const { error, loading, searchedTodos, completeTodo, deleteTodo } =
     React.useContext(TodoContext);
 
   return (
@@ -45,6 +40,9 @@ function AppUI() {
           ))}
         </TodoList>
 
+              <Modal>
+                <p>miercoles</p>
+              </Modal>
         <CreateTodoButton />
       </section>
     </>
