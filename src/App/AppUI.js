@@ -55,7 +55,7 @@ function AppUI() {
             <button onClick={() => setOpenModal(false)}>X</button>
           </Modal>
         )}
-        <CreateTodoButton setOpenModal={setOpenModal} />
+        <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal}/>
       </section>
     </>
   );
