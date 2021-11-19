@@ -5,7 +5,7 @@
   border-radius: 35px;
   width: 60px;
   height: 40px;
-
+  z-index: 1;
   box-shadow: rgba(11, 223, 159, 0.1) 0px 4px 12px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -15,7 +15,7 @@
   color: rgba(0, 0, 0, 0.514);
 }
 
-.butCreateTodoButton-container {
+.CreateTodoButton-container {
   display: flex;
   justify-content: center;
 }

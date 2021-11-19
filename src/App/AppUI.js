@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+
 // Components
 import { TodoCounter } from "../components/TodoCounter";
 import { CreateTodoButton } from "../components/CreateTodoButton";
@@ -10,7 +11,15 @@ import { TodoContext } from "../components/TodoContext";
 import { Modal } from "../Modal";
 
 function AppUI() {
-  const { error, loading, searchedTodos, completeTodo, deleteTodo } =
+  const { 
+    error, 
+    loading, 
+    searchedTodos, 
+    completeTodo, 
+    deleteTodo,
+    openModal,
+    setOpenModal, 
+  } =
     React.useContext(TodoContext);
 
   return (
@@ -40,10 +49,13 @@ function AppUI() {
           ))}
         </TodoList>
 
-              <Modal>
-                <p>miercoles</p>
-              </Modal>
-        <CreateTodoButton />
+        {!!openModal && (
+          <Modal className="modal-background">
+            <p>miercoles</p>
+            <button onClick={() => setOpenModal(false)}>X</button>
+          </Modal>
+        )}
+        <CreateTodoButton setOpenModal={setOpenModal} />
       </section>
     </>
   );
