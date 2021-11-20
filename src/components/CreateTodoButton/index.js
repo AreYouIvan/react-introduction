@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
+// import { TodoContext } from "../TodoContext";
 import "./CreateTodoButton.css";
 
 function CreateTodoButton(props) {
@@ -32,11 +32,9 @@ functions for active the modal.
   // };
 
   return (
-    <div className="CreateTodoButton-container">
       <button onClick={onClickButton} className="CreateTodoButton-button">
         +
       </button>
-    </div>
   );
 }
 

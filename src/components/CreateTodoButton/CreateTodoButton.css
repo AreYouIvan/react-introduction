@@ -1,5 +1,7 @@
 .CreateTodoButton-button {
   position: fixed;
+  bottom: 15px;
+  left: calc(50% - 30px);
   /* background-color: transparent;
   border: 1px solid ; */
   border-radius: 35px;
@@ -17,5 +19,6 @@
 
 .CreateTodoButton-container {
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  position:relative;
 }

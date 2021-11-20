@@ -8,6 +8,7 @@ import { TodoItem } from "../components/TodoItem";
 import { TodoList } from "../components/TodoList";
 import { TodoSearch } from "../components/TodoSearch";
 import { TodoContext } from "../components/TodoContext";
+import { TodoForm } from "../components/TodoForm";
 import { Modal } from "../Modal";
 
 function AppUI() {
@@ -51,7 +52,7 @@ function AppUI() {
 
         {!!openModal && (
           <Modal className="modal-background">
-            <p>miercoles</p>
+            <TodoForm/>
             <button onClick={() => setOpenModal(false)}>X</button>
           </Modal>
         )}
