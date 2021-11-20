@@ -12,17 +12,17 @@ functions for active the modal.
   // React.useContext(TodoContext);
 
   const onClickButton = () => {
-    //   props.setOpenModal(!props.openModal);
-    // };
+      // props.setOpenModal(!props.openModal);
+      if (!props.openModal) {
+        props.setOpenModal(true);
+      } else {
+        props.setOpenModal(false);
+      }
+    };
 
     // This is the second.
 
-    if (!!props.openModal) {
-      props.setOpenModal(false);
-    } else {
-      props.setOpenModal(true);
-    }
-  };
+  // };
 
   return (
     <div className="CreateTodoButton-container">
