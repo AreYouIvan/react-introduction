@@ -23,7 +23,7 @@
 }
 
 .TodoSearch-input::placeholder{
-  color: rgba(255, 255, 255, 0.726);
+  color: rgba(0, 0, 0, 0.514);
 }
 
 .TodoSearch-input-icon {

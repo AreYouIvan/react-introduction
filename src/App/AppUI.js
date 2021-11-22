@@ -53,7 +53,6 @@ function AppUI() {
         {!!openModal && (
           <Modal className="modal-background">
             <TodoForm/>
-            <button onClick={() => setOpenModal(false)}>X</button>
           </Modal>
         )}
         <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal}/>
