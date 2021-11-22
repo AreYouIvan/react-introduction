@@ -1,7 +1,7 @@
 import React from "react";
 import { TodoContext } from "../TodoContext";
 
-function TodoForm(props) {
+function TodoForm() {
   const [newTodoValue, setNewTodoValue] = React.useState("");
 
   const { addTodo, setOpenModal } = React.useContext(TodoContext);
@@ -17,13 +17,13 @@ function TodoForm(props) {
     addTodo(newTodoValue);
     onCancel();
   };
-    const onKeyUp = (e) => {
-      if (e.charCode === 13) {
-        e.preventDefault();
-        addTodo(newTodoValue);
-        onCancel()
-      }
-  }
+  const onKeyUp = (e) => {
+    if (e.charCode === 13) {
+      e.preventDefault();
+      addTodo(newTodoValue);
+      onCancel();
+    }
+  };
 
   return (
     <form onSubmit={onSubmit} onKeyPress={onKeyUp}>
