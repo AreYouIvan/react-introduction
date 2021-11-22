@@ -9,19 +9,19 @@ import { TodoList } from "../components/TodoList";
 import { TodoSearch } from "../components/TodoSearch";
 import { TodoContext } from "../components/TodoContext";
 import { TodoForm } from "../components/TodoForm";
+import { Skeleton } from "../components/Skeleton";
 import { Modal } from "../Modal";
 
 function AppUI() {
-  const { 
-    error, 
-    loading, 
-    searchedTodos, 
-    completeTodo, 
+  const {
+    error,
+    loading,
+    searchedTodos,
+    completeTodo,
     deleteTodo,
     openModal,
-    setOpenModal, 
-  } =
-    React.useContext(TodoContext);
+    setOpenModal,
+  } = React.useContext(TodoContext);
 
   return (
     <>
@@ -31,7 +31,10 @@ function AppUI() {
         <TodoSearch />
         <TodoList>
           {error && <p>Sorry, there's an error</p>}
-          {loading && <p>We're loading, thanks for waiting</p>}
+          {/* {loading &&
+            new Array(4).fill.map((item, index) => (
+              <Skeleton key={index}></Skeleton>
+            ))} */} 
           {!loading && !searchedTodos.length && (
             <p>Let's create your first todo</p>
           )}
@@ -52,10 +55,10 @@ function AppUI() {
 
         {!!openModal && (
           <Modal className="modal-background">
-            <TodoForm/>
+            <TodoForm />
           </Modal>
         )}
-        <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal}/>
+        <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
       </section>
     </>
   );
