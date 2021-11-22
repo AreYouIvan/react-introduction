@@ -1,0 +1,42 @@
+.box-props {
+  box-shadow: rgba(87, 87, 87, 0.1) 0px 4px 12px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 5px;
+  margin: 5px;
+  background-color: rgba(305, 255, 255, 0.1);
+  border-radius: 7px;
+  color: rgba(0, 0, 0, 0.514);
+}
+
+label{
+  font-weight: bold;
+  margin: 5px;
+}
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-custom {
+  border: none;
+  outline: none;
+  font-family: "Montserrat";
+  padding: 5px;
+  text-indent: 5px;
+  color: rgba(0, 0, 0, 0.514);
+}
+::placeholder{
+  color: rgba(0, 0, 0, 0.514);
+}
+
+.buttons-props {
+  border: none;
+  background: none;
+  border-radius: 7px;
+  color: rgba(0, 0, 0, 0.514);
+  margin: 5px;
+}
