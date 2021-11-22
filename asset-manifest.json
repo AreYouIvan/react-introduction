@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-introduction/static/css/main.f1fb20c3.chunk.css",
+    "main.js": "/react-introduction/static/js/main.80f11d34.chunk.js",
+    "main.js.map": "/react-introduction/static/js/main.80f11d34.chunk.js.map",
+    "runtime-main.js": "/react-introduction/static/js/runtime-main.84233284.js",
+    "runtime-main.js.map": "/react-introduction/static/js/runtime-main.84233284.js.map",
+    "static/js/2.083b0d2b.chunk.js": "/react-introduction/static/js/2.083b0d2b.chunk.js",
+    "static/js/2.083b0d2b.chunk.js.map": "/react-introduction/static/js/2.083b0d2b.chunk.js.map",
+    "index.html": "/react-introduction/index.html",
+    "static/css/main.f1fb20c3.chunk.css.map": "/react-introduction/static/css/main.f1fb20c3.chunk.css.map",
+    "static/js/2.083b0d2b.chunk.js.LICENSE.txt": "/react-introduction/static/js/2.083b0d2b.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/react-introduction/static/media/Live-Wave-Background.5ee6ec16.svg",
+    "static/media/TodoItem.css": "/react-introduction/static/media/bin.2fec1c3a.svg",
+    "static/media/TodoSearch.css": "/react-introduction/static/media/lupa.1d47798d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84233284.js",
+    "static/js/2.083b0d2b.chunk.js",
+    "static/css/main.f1fb20c3.chunk.css",
+    "static/js/main.80f11d34.chunk.js"
+  ]
+}
