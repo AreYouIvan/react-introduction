@@ -31,12 +31,10 @@ function AppUI() {
         <TodoSearch />
         <TodoList>
           {error && <p>Sorry, there's an error</p>}
-          {/* {loading &&
-            new Array(4).fill.map((item, index) => (
-              <Skeleton key={index}></Skeleton>
-            ))} */} 
+          {loading &&
+              <p><center>Loading todos</center></p>} 
           {!loading && !searchedTodos.length && (
-            <p>Let's create your first todo</p>
+            <p><center>Let's create your first todo</center></p>
           )}
           {searchedTodos.map((e) => (
             <TodoItem
