@@ -32,19 +32,17 @@ function AppUI() {
 
   return (
     <>
-      <TodoHeader>
-        <TodoCounter 
-          totalTodos={totalTodos} 
-          completedTodos={completedTodos} 
-        />
-        <TodoSearch 
-          searchValue={searchValue} 
-          setSearchValue={setSearchValue} 
-        />
-      </TodoHeader>
       <section className="App-body">
         <h2 className="App-title">Your tasks</h2>
-
+        <TodoHeader>
+          <TodoCounter
+            totalTodos={totalTodos}
+            completedTodos={completedTodos}
+          />
+          <TodoSearch
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
         <TodoList>
           {error && <TodosError />}
           {loading && <TodosLoading />}
@@ -63,6 +61,7 @@ function AppUI() {
             />
           ))}
         </TodoList>
+        </TodoHeader>
 
         {!!openModal && (
           <Modal className="modal-background">
