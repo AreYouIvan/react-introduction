@@ -26,6 +26,11 @@
   color: rgba(0, 0, 0, 0.514);
 }
 
+.TodoSearch-input:disabled {
+
+  opacity: 30%;
+}
+
 .TodoSearch-input-icon {
   height: 25px;
   min-height: 25px;

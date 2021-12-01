@@ -43,10 +43,12 @@ function App() {
           <TodoCounter
             totalTodos={totalTodos}
             completedTodos={completedTodos}
+            loading={loading}
           />
           <TodoSearch
             searchValue={searchValue}
             setSearchValue={setSearchValue}
+            loading={loading}
           />
           <TodoList
             loading={loading}
@@ -57,18 +59,25 @@ function App() {
             onError={() => <TodosError />}
             onLoading={() => <TodosLoading />}
             onEmpty={() => <EmptyTodos />}
-            onEmptySearchResults=
-              {(searchText) => 
-                (<p><center>There is no results to {searchText}</center></p>)}
-            render={(todo) => (
-            <TodoItem
-              text={todo.text}
-              key={todo.text}
-              completed={todo.completed}
-              onComplete={() => { completeTodo(todo.text); } }
-              onDelete={() => {deleteTodo(todo.text);} } />
+            onEmptySearchResults={(searchText) => (
+              <p>
+                <center>There is no results to {searchText}</center>
+              </p>
             )}
-            >
+            render={(todo) => (
+              <TodoItem
+                text={todo.text}
+                key={todo.text}
+                completed={todo.completed}
+                onComplete={() => {
+                  completeTodo(todo.text);
+                }}
+                onDelete={() => {
+                  deleteTodo(todo.text);
+                }}
+              />
+            )}
+          >
             {/* {(todo) => (
             <TodoItem
               text={todo.text}
@@ -82,9 +91,7 @@ function App() {
 
         {!!openModal && (
           <Modal className="modal-background">
-            <TodoForm 
-              addTodo={addTodo} 
-              setOpenModal={setOpenModal} />
+            <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
           </Modal>
         )}
         <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
