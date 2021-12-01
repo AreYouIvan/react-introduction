@@ -7,7 +7,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 function TodosLoading({children}) {
   return (
     <div>
-      {children}
+      <p><center>Loading Todos..</center></p>
     </div>
   );
 }
