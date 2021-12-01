@@ -39,19 +39,19 @@ function App() {
     <>
       <section className="App-body">
         <h2 className="App-title">Your tasks</h2>
-        <TodoHeader>
+        <TodoHeader loading={loading}>
           <TodoCounter
             totalTodos={totalTodos}
             completedTodos={completedTodos}
-            loading={loading}
           />
           <TodoSearch
             searchValue={searchValue}
             setSearchValue={setSearchValue}
-            loading={loading}
+            // loading={loading}
           />
+        </TodoHeader>
           <TodoList
-            loading={loading}
+            // loading={loading}
             error={error}
             searchedTodos={searchedTodos}
             searchText={searchValue}
@@ -87,7 +87,6 @@ function App() {
               onDelete={() => {deleteTodo(todo.text);} } />
             )} */}
           </TodoList>
-        </TodoHeader>
 
         {!!openModal && (
           <Modal className="modal-background">
