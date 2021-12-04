@@ -4,10 +4,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 // import "./TodosLoading.css"
 
-function TodosLoading({children}) {
+function TodosLoading({ children }) {
   return (
     <div>
-      <p><center>Loading Todos..</center></p>
+      <p>Loading Todos..</p>
     </div>
   );
 }

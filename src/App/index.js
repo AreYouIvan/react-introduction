@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-  
-  import { useTodos } from "./useTodos";
+
+import { useTodos } from "./useTodos";
 // Components
 import { TodoHeader } from "../components/TodoHeader";
 import { CreateTodoButton } from "../components/CreateTodoButton";
@@ -14,12 +14,9 @@ import { TodosLoading } from "../components/TodosLoading";
 import { TodosError } from "../components/TodosError";
 import { TodoSearch } from "../components/TodoSearch";
 import { TodoCounter } from "../components/TodoCounter";
-
+import { ChangeAlertWithStorageListener } from "../components/ChangeAlertWithStorageListener";
 
 function App() {
-
- 
-
   const {
     error,
     loading,
@@ -33,7 +30,6 @@ function App() {
     totalTodos,
     completedTodos,
     addTodo,
-    
   } = useTodos();
   return (
     <>
@@ -50,35 +46,33 @@ function App() {
             // loading={loading}
           />
         </TodoHeader>
-          <TodoList
-            // loading={loading}
-            error={error}
-            searchedTodos={searchedTodos}
-            searchText={searchValue}
-            totalTodos={totalTodos}
-            onError={() => <TodosError />}
-            onLoading={() => <TodosLoading />}
-            onEmpty={() => <EmptyTodos />}
-            onEmptySearchResults={(searchText) => (
-              <p>
-                <center>There is no results to {searchText}</center>
-              </p>
-            )}
-            render={(todo) => (
-              <TodoItem
-                text={todo.text}
-                key={todo.text}
-                completed={todo.completed}
-                onComplete={() => {
-                  completeTodo(todo.text);
-                }}
-                onDelete={() => {
-                  deleteTodo(todo.text);
-                }}
-              />
-            )}
-          >
-            {/* {(todo) => (
+        <TodoList
+          // loading={loading}
+          error={error}
+          searchedTodos={searchedTodos}
+          searchText={searchValue}
+          totalTodos={totalTodos}
+          onError={() => <TodosError />}
+          onLoading={() => <TodosLoading />}
+          onEmpty={() => <EmptyTodos />}
+          onEmptySearchResults={(searchText) => (
+            <p>There is no results to {searchText}</p>
+          )}
+          render={(todo) => (
+            <TodoItem
+              text={todo.text}
+              key={todo.text}
+              completed={todo.completed}
+              onComplete={() => {
+                completeTodo(todo.text);
+              }}
+              onDelete={() => {
+                deleteTodo(todo.text);
+              }}
+            />
+          )}
+        >
+          {/* {(todo) => (
             <TodoItem
               text={todo.text}
               key={todo.text}
@@ -86,7 +80,7 @@ function App() {
               onComplete={() => { completeTodo(todo.text); } }
               onDelete={() => {deleteTodo(todo.text);} } />
             )} */}
-          </TodoList>
+        </TodoList>
 
         {!!openModal && (
           <Modal className="modal-background">
@@ -94,6 +88,7 @@ function App() {
           </Modal>
         )}
         <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
+        <ChangeAlertWithStorageListener />
       </section>
     </>
   );
