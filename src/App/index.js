@@ -30,6 +30,7 @@ function App() {
     totalTodos,
     completedTodos,
     addTodo,
+    synchronizeTodos,
   } = useTodos();
   return (
     <>
@@ -73,7 +74,7 @@ function App() {
           )}
         >
           {/* {(todo) => (
-            <TodoItem
+          <TodoItem
               text={todo.text}
               key={todo.text}
               completed={todo.completed}
@@ -88,7 +89,7 @@ function App() {
           </Modal>
         )}
         <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
-        <ChangeAlertWithStorageListener />
+        <ChangeAlertWithStorageListener synchronize={synchronizeTodos} />
       </section>
     </>
   );
