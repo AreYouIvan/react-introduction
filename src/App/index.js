@@ -14,7 +14,7 @@ import { TodosLoading } from "../components/TodosLoading";
 import { TodosError } from "../components/TodosError";
 import { TodoSearch } from "../components/TodoSearch";
 import { TodoCounter } from "../components/TodoCounter";
-import { ChangeAlertWithStorageListener } from "../components/ChangeAlertWithStorageListener";
+import { ChangeAlert } from "../components/ChangeAlertUseStorageListener";
 
 function App() {
   const {
@@ -34,7 +34,7 @@ function App() {
   } = useTodos();
   return (
     <>
-      <ChangeAlertWithStorageListener synchronize={synchronizeTodos} />
+      <ChangeAlert synchronize={synchronizeTodos} />
       <section className="App-body">
         <h2 className="App-title">Your tasks</h2>
         <TodoHeader loading={loading}>
