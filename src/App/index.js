@@ -34,6 +34,7 @@ function App() {
   } = useTodos();
   return (
     <>
+      <ChangeAlertWithStorageListener synchronize={synchronizeTodos} />
       <section className="App-body">
         <h2 className="App-title">Your tasks</h2>
         <TodoHeader loading={loading}>
@@ -44,11 +45,10 @@ function App() {
           <TodoSearch
             searchValue={searchValue}
             setSearchValue={setSearchValue}
-            // loading={loading}
           />
         </TodoHeader>
         <TodoList
-          // loading={loading}
+          loading={loading}
           error={error}
           searchedTodos={searchedTodos}
           searchText={searchValue}
@@ -89,7 +89,6 @@ function App() {
           </Modal>
         )}
         <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
-        <ChangeAlertWithStorageListener synchronize={synchronizeTodos} />
       </section>
     </>
   );
